@@ -1,0 +1,15 @@
+services:
+  consumer-go:
+    container_name: consumer-go
+    build:
+      context: ./consumer-go
+      dockerfile: Dockerfile.multistage
+    depends_on:
+      - postgres
+    #   - kafka
+    environment:
+      KAFKA_BROKER: kafka:9092
+      KAFKA_TOPIC: my_topic
+    ports:
+      - 8080:8080
+    command: ["./consumer-go"]

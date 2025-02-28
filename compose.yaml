@@ -1,0 +1,10 @@
+include:
+   - ./01-postgreSQL/postgresql.yaml
+   - ./02-pgAdmin/pgadmin.yaml
+   #- consumer-go.yaml
+   #- zookeeper.yaml
+   #- kafka.yaml
+   #- debezium.yaml
+
+volumes:
+  pgdata:
